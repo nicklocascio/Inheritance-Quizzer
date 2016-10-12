@@ -4,6 +4,8 @@ public class GameRunner
 	{
 	static String[] instantiations = new String[4];
 	static String[] questions = new String[3];
+	static int counter = 0;
+	static Scanner userInput3 = new Scanner(System.in);
 	
 	public static void delay()
 		{
@@ -52,25 +54,54 @@ public class GameRunner
 			Scanner userInput3 = new Scanner(System.in);
 			System.out.println("If I run " + questions[number2] + ", what will print out?");
 			System.out.println("a) Furniture provides a comfortable place for someone to sit.");
-			System.out.println("b) The best place to purchase furnitre is at American Furniture Warehouse.");
+			System.out.println("b) The best place to purchase furniture is at American Furniture Warehouse.");
 			System.out.println("c) Couches provide seating for multiple people, such as family and friends.");
+			System.out.println("d) Some couches have neat accessories such as cupholders or recliners.");
+			System.out.println("e) Nothing");
 			String answer = userInput3.nextLine();
 			
-			// Answers 
-			int counter = 0;
-			if(number == 0 && number2 == 0 && answer.equals("Furniture provides a comfortable place for someone to sit."))
+			// Answers
+			if(number == 0 && number2 == 0 && answer.equals("a"))
 				{
 				counter++;
 				}
-			if(number == 0 && number2 == 1 && answer.equals("The best place to purchase furnitre is at American Furniture Warehouse."))
+			if(number == 0 && number2 == 1 && answer.equals("b"))
 				{
 				counter++;
 				}
-			if(number == 0 && number2 == 2 && answer.equals("Nothing"))
+			if(number == 0 && number2 == 2 && answer.equals("e"))
 				{
 				counter++;
 				}
-			System.out.println(counter);
+			if(number == 1 && number2 == 0 && answer.equals("c"))
+				{
+				counter++;
+				}
+			if(number == 1 && number2 == 1 && answer.equals("b"))
+				{
+				counter++;
+				}
+			if(number == 1 && number2 == 2   && answer.equals("e"))
+				{
+				counter++;
+				}
+			if(number == 2 && answer.equals("e"))
+				{
+				counter++;
+				}
+			if(number == 3 && number2 == 0 && answer.equals("c"))
+				{
+				counter++;
+				}
+			if(number == 3 && number2 == 1 && answer.equals("b"))
+				{
+				counter++;
+				}
+			if(number == 3 && number2 == 2 && answer.equals("d"))
+				{
+				counter++;
+				}
 			}
+		System.out.println("You got " + counter + " questions right out of " + numberOfQuestions);
 		}
 	}

@@ -7,6 +7,6 @@ public class Furniture
 		}
 	public void purchase()
 		{
-		System.out.println("The best place to purchase furnitre is at American Furniture Warehouse.");
+		System.out.println("The best place to purchase furniture is at American Furniture Warehouse.");
 		}
 	}
