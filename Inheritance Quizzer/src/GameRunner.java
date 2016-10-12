@@ -103,5 +103,7 @@ public class GameRunner
 				}
 			}
 		System.out.println("You got " + counter + " questions right out of " + numberOfQuestions);
+		
+		// Try something totally different 
 		}
 	}
