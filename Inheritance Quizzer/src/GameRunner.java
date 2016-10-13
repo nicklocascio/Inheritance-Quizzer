@@ -5,7 +5,10 @@ public class GameRunner
 	static String[] instantiations = new String[4];
 	static String[] questions = new String[3];
 	static int counter = 0;
-	static Scanner userInput3 = new Scanner(System.in);
+//	static Scanner userInput3 = new Scanner(System.in);
+//	static String answer = userInput3.nextLine();
+//	static int number = (int)(Math.random()*4);
+//	static int number2 = (int)(Math.random()*3);
 	
 	public static void delay()
 		{
@@ -48,11 +51,13 @@ public class GameRunner
 			{
 			askQuestion();
 			int number = (int)(Math.random()*4);
-			System.out.println("You are given the code on your paper and this instantiation: " + instantiations[number]);
-			delay();
+			System.out.println("You are given the code on your paper and this code: ");
+			System.out.println(instantiations[number]);
 			int number2 = (int)(Math.random()*3);
 			Scanner userInput3 = new Scanner(System.in);
-			System.out.println("If I run " + questions[number2] + ", what will print out?");
+			System.out.println(questions[number2]); 
+			delay();
+			System.out.println("What will print out?");
 			System.out.println("a) Furniture provides a comfortable place for someone to sit.");
 			System.out.println("b) The best place to purchase furniture is at American Furniture Warehouse.");
 			System.out.println("c) Couches provide seating for multiple people, such as family and friends.");
@@ -61,46 +66,86 @@ public class GameRunner
 			String answer = userInput3.nextLine();
 			
 			// Answers
-			if(number == 0 && number2 == 0 && answer.equals("a"))
+			switch(answer)
 				{
-				counter++;
+				case "e":
+					{
+					if(number == 2)
+						{
+						counter++;
+						}
+					}					
+				case "a":
+					{
+					if(number == 0 && number2 == 0)
+						{
+						counter++;
+						}
+					}				
+				case "b":
+					{
+					if(number2 == 1)
+						{
+						counter++;
+						}
+					}					
+				case "c":
+					{
+					if(number == 1 || number == 3 && number2 == 0)
+						{
+						counter++;
+						}
+					}
+				case "d":
+					{
+					if(number == 3 && number2 == 3)
+						{
+						counter++;
+						}
+					}
 				}
-			if(number == 0 && number2 == 1 && answer.equals("b"))
-				{
-				counter++;
-				}
-			if(number == 0 && number2 == 2 && answer.equals("e"))
-				{
-				counter++;
-				}
-			if(number == 1 && number2 == 0 && answer.equals("c"))
-				{
-				counter++;
-				}
-			if(number == 1 && number2 == 1 && answer.equals("b"))
-				{
-				counter++;
-				}
-			if(number == 1 && number2 == 2   && answer.equals("e"))
-				{
-				counter++;
-				}
-			if(number == 2 && answer.equals("e"))
-				{
-				counter++;
-				}
-			if(number == 3 && number2 == 0 && answer.equals("c"))
-				{
-				counter++;
-				}
-			if(number == 3 && number2 == 1 && answer.equals("b"))
-				{
-				counter++;
-				}
-			if(number == 3 && number2 == 2 && answer.equals("d"))
-				{
-				counter++;
-				}
+			
+			
+//			if(number == 0 && number2 == 0 && answer.equals("a"))
+//				{
+//				counter++;
+//				}
+//			if(number == 0 && number2 == 1 && answer.equals("b"))
+//				{
+//				counter++;
+//				}
+//			if(number == 0 && number2 == 2 && answer.equals("e"))
+//				{
+//				counter++;
+//				}
+//			if(number == 1 && number2 == 0 && answer.equals("c"))
+//				{
+//				counter++;
+//				}
+//			if(number == 1 && number2 == 1 && answer.equals("b"))
+//				{
+//				counter++;
+//				}
+//			if(number == 1 && number2 == 2   && answer.equals("e"))
+//				{
+//				counter++;
+//				}
+//			if(number == 2 && answer.equals("e"))
+//				{
+//				counter++;
+//				}
+//			if(number == 3 && number2 == 0 && answer.equals("c"))
+//				{
+//				counter++;
+//				}
+//			if(number == 3 && number2 == 1 && answer.equals("b"))
+//				{
+//				counter++;
+//				}
+//			if(number == 3 && number2 == 2 && answer.equals("d"))
+//				{
+//				counter++;
+//				}
 			}
 		System.out.println("You got " + counter + " questions right out of " + numberOfQuestions);
 		
